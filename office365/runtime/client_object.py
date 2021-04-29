@@ -162,6 +162,7 @@ class ClientObject(object):
             url = self.context.service_root_url() + self.resource_path.to_url()
             if not self.query_options.is_empty:
                 url = url + "?" + self._query_options.to_url()
+            url = "/".join(dict.fromkeys(url.split("/")).keys())
             return url
         return None
 
