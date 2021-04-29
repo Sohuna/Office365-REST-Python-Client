@@ -78,7 +78,7 @@ class GraphClient(ClientRuntimeContext):
 
         :type request: RequestOptions
         """
-        token_json = self._acquire_token_callback()
+        token_json = self._acquire_token_callback
         token = TokenResponse.from_json(token_json)
         request.set_header('Authorization', 'Bearer {0}'.format(token.accessToken))
 
